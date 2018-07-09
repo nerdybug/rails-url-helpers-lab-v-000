@@ -13,7 +13,7 @@ describe 'Multiple students' do
     Student.create!(first_name: "Daenerys", last_name: "Targaryen")
     Student.create!(first_name: "Lindsey", last_name: "Stirling")
 
-    visit students_path
+    visit student_path
     expect(page).to have_content(/Daenerys|Lindsey/)
   end
 end
@@ -24,12 +24,12 @@ describe 'Show page' do
   end
 
   it 'renders properly' do
-    visit students_path(@student)
+    visit student_path(@student)
     expect(page.status_code).to eq(200)
   end
 
   it 'renders the first name in a h1 tag' do
-    visit students_path(@student)
+    visit student_path(@student)
     expect(page).to have_css("h1", text: "Daenerys")
   end
 
