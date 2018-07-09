@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
     @student.update(active: true)
     redirect 'student_path(@student)'
   end
-  
+
   private
 
     def set_student
